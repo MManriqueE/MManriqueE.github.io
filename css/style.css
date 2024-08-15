@@ -1,0 +1,586 @@
+@layer base {
+    :root {
+      --background: #fafafa; /*white*/
+      --primary: #081359; /*blue*/
+      --overlay: #222a57; /*blue bg for menu*/
+      --hover: #696f99; /*faded blue*/
+      --link: #875ec9; /*lavender for text links*/
+      --black: #101010;
+      --bottom: #f5f5f5;
+      --top: #f5f5f5;
+      --title: "Montserrat", sans-serif;
+      --heading: "Oswald", sans-serif;
+      --text: "Source Sans 3", sans-serif;
+      --base-size: 1.3rem;
+      --scale: 1.4;
+      --h1: calc(var(--h2) * var(--scale));
+      --h2: calc(var(--h3) * var(--scale));
+      --h3: calc(var(--h4) * var(--scale));
+      --h4: calc(var(--h5) * var(--scale));
+      --h5: calc(var(--h6) * var(--scale));
+      --h6: var(--base-size);
+      --small: calc(var(--base-size) / var(--scale));
+    }
+    body {
+      background-color: var(--background);
+      font-family: var(--text);
+      font-size: var(--base-size);
+      margin: 0;
+      padding: 0;
+      line-height: 1.5;
+    }
+    /*--------FONTS-------*/
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: var(--heading);
+    }
+    h1 {
+      font-family: var(--title);
+      text-transform: uppercase;
+      font-size: var(--h1);
+    }
+    h2 {
+      font-size: var(--h2);
+    }
+    h3 {
+      font-size: var(--h3);
+    }
+    h4 {
+      font-size: var(--h4);
+    }
+    h5 {
+      font-size: var(--h5);
+    }
+    h6 {
+      font-size: var(--h6);
+    }
+    /*------LINKS-------*/
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    /*------IMAGES------*/
+    img {
+      max-width: 100%;
+    }
+    figure {
+      padding: 0;
+      margin: 0;
+    }
+    /*------COLORS-------*/
+    .colors {
+      display: flex;
+      gap: 20px;
+    }
+    .colors > * {
+      width: 50px;
+      height: 50px;
+      border: 1px solid grey;
+    }
+    .background {
+      background-color: var(--background);
+    }
+    .primary {
+      background-color: var(--primary);
+    }
+    .overlay {
+      background-color: var(--overlay);
+    }
+    .hover {
+      background-color: var(--hover);
+    }
+    .link {
+      background-color: var(--link);
+    }
+    .container {
+      max-width: 1200px;
+      /*border: 2px solid red;*/
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    /*------BUTTONS--------*/
+    .primarybutton {
+      display: inline-block;
+      background-color: var(--primary);
+      border: 0;
+      padding: 1rem 3rem;
+      color: var(--background);
+      font-family: var(--text);
+      font-size: var(--h6);
+      border-radius: 2rem;
+      font-weight: 600;
+    }
+    .primarybutton:hover {
+      background-color: var(--hover);
+    }
+    .secondarybutton {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--primary);
+        border-color: var(--primary);
+        padding: 0.8rem 2rem;
+        font-family: var(--text);
+        font-size: var(--h6);
+        border-radius: 2rem;
+        font-weight: 600;
+        text-decoration: none;
+    }
+    .secondarybutton:hover {
+        background-color: var(--primary);
+        color: var(--background);
+        border-color: var(--primary);
+        text-decoration: none;
+    }
+    .secondaryaltbutton {
+        display: inline-block;
+        background-color: transparent;
+        color: var(--background);
+        border-color: var(--background);
+        padding: 0.8rem 2rem;
+        font-family: var(--text);
+        font-size: var(--h6);
+        border-radius: 2rem;
+        font-weight: 600;
+    }
+    .secondaryaltbutton:hover {
+        background-color: var(--background);
+        color: var(--primary);
+        border-color: var(--primary);
+        text-decoration: none;
+    }
+  
+    .dropbtn {
+      background-color: transparent;
+      color: var(--primary);
+      font-family: var(--text);
+      font-weight: 700;
+      font-size: var(--h6);
+      border: none;
+      cursor: pointer;
+    }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--overlay);
+      min-width: 160px;
+      padding: 0.5rem;
+      z-index: 1;
+    }
+    .dropdown-content a {
+      color: var(--background);
+      padding: 0.2rem 1rem;
+      text-decoration: none;
+      display: block;
+      font-weight: 500;
+      font-size: var(--h6);
+    }
+    .dropdown-content a:hover {
+      color: var(--hover);
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+    .dropdown:hover .dropbtn {
+      color: var(--hover);
+    }
+  
+    /* border box model: https://css-tricks.com/box-sizing/ */
+    html {
+      box-sizing: border-box;
+    }
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+  
+    /* h/t Scott O'Hara https://css-tricks.com/inclusively-hidden/ */
+    .sr-only:not(:focus):not(:active) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      overflow: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+    }
+  }
+  @layer cover {
+    .cover {
+      background-image: url(../img/00main/Banner_main.jpg);
+      background-repeat: no-repeat;
+      background-position: 60% 50%;
+      color: var(--background);
+      padding: 12rem 0;
+      text-align: center;
+      overflow-wrap: break-word;
+      hyphens: manual;
+    }
+    .cover p {
+      font-size: 1.5rem;
+    }
+    .cover h2 {
+      font-family: var(--title);
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    @media (max-width: 532px) {
+      .cover h2 {
+        font-size: var(--h3);
+      }
+    }
+    @media (max-width: 400px) {
+      .cover h2 {
+        font-size: var(--h4);
+      }
+    }
+  }
+  @layer rightsection {
+    .powermind {
+      background-image: url(../img/01powermind/1main/Banner_MMW.png);
+      background-color: var(--black);
+      background-repeat: no-repeat;
+      background-position: center center;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+      /*border: solid red;*/
+      margin: 0;
+      color: var(--background);
+      padding: 10rem 0;
+      text-align: right;
+    }
+
+    .powermind a:last-child {
+        margin-top: 4rem;
+        border: 2px solid var(--background);
+    }
+    .powermind p {
+        padding: 0 0 0 14rem;
+    }
+    @media (max-width: 1000px) {
+        .powermind p {
+            padding: 0;
+        }
+    }
+  }
+  @layer leftsection {
+    .fast2 {
+      color: var(--primary);
+      margin: 0;
+      text-align: left;
+      padding: 14rem, 0;
+    }
+    .fast2 a:last-child {
+        margin-top: 4rem;
+        margin-bottom: 6rem;
+        border: 2px solid var(--primary);
+      }
+    .fast2 p {
+        padding: 0 14rem 0 0;
+    }
+    @media (max-width: 1000px) {
+        .fast2 p {
+            padding: 0;
+        }
+    }
+  }
+  @layer nav {
+    body {
+      background-color: var(--top);
+    }
+    header {
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 2rem;
+    }
+    header h1 {
+      font-size: var(--h5);
+      color: var(--link);
+      font-weight: 400;
+      margin: 0;
+      align-items: center;
+    }
+    header a {
+      text-decoration: none;
+      color: var(--primary);
+    }
+    header a:hover {
+      color: var(--hover);
+    }
+    header svg {
+      width: 40px;
+      fill: var(--primary);
+      margin-top: 0.5rem;
+    }
+    header a:hover svg {
+      fill: var(--hover);
+    }
+    header img {
+      width: 80px;
+      margin: 0 1.2rem 0 0;
+    }
+    nav {
+      font-family: var(--text);
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 3rem;
+    }
+    nav .primarybutton {
+      padding: 0.5rem 1rem 0.5rem 1rem;
+      border-radius: 2rem;
+      color: var(--background);
+    }
+    nav .primarybutton:hover {
+      color: var(--background);
+    }
+    @media (max-width: 1078px) {
+      header {
+        justify-content: center;
+        padding: 1rem;
+      }
+      header h1 {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+      }
+    }
+    @media (max-width: 636px) {
+      header {
+        justify-content: space-between;
+        align-items: start;
+      }
+      header h1 {
+        flex-basis: auto;
+        margin-bottom: 0.5rem;
+      }
+      header button {
+        display: block;
+        font-size: 3rem;
+        line-height: 1;
+        border: 0;
+        background: transparent;
+        color: var(--primary);
+      }
+      header button:hover {
+        color: var(--hover);
+      }
+      header button::after {
+        content: "\2630";
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        right: 200%;
+        width: 100vw;
+        height: 100vh;
+        opacity: 0;
+        background: var(--primary);
+        padding-top: 20%;
+        transition: right 0s 0.5s, opacity 0.5s;
+      }
+      button:focus + nav,
+      button:focus-within + nav {
+        right: 0;
+        opacity: 1;
+        transition: right 0s, opacity 0.5s;
+      }
+      nav ul {
+        display: block;
+        text-align: center;
+        position: relative;
+        right: -50vh;
+        transition: right 0.5s;
+      }
+      button:focus + nav ul,
+      button:focus-within + nav ul {
+        right: 0;
+      }
+      nav a:any-link:not(.primarybutton) {
+        display: block;
+        padding: 1.5rem;
+        color: var(--background);
+      }
+      nav a svg {
+        fill: var(--background);
+      }
+      nav a:hover,
+      nav a svg:hover {
+        color: var(--hover);
+        fill: var(--hover);
+      }
+      nav .primarybutton {
+        background-color: var(--background);
+        color: var(--primary);
+        margin-top: 1.5rem;
+      }
+      nav .primarybutton:hover {
+        background-color: var(--hover);
+        color: var(--background);
+      }
+      nav ul::after {
+        content: "\2716";
+        color: var(--background);
+        display: block;
+        position: absolute;
+        top: 0.125rem;
+        right: 0.5rem;
+        font-size: 3rem;
+        line-height: 1;
+      }
+    }
+    @media (max-width: 493px) {
+      header h1 {
+        font-size: var(--h6);
+      }
+      header img {
+        width: 60px;
+      }
+    }
+    @media (max-width: 400px) {
+      header h1 {
+        font-size: var(--small);
+      }
+      header img {
+        width: 50px;
+      }
+      header {
+      align-items: center;
+      }
+    }
+  } 
+  @layer detail {
+    body {
+      background-color: var(--background);
+    }
+    header {
+      background-color: var(--top);
+    }
+    .section-detail {
+      padding: 0 0 4rem 0;
+      color: var(--primary);
+    }
+    .section-detail li {
+      margin: 1rem;
+    }
+    figure img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+    figure a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    figcaption {
+      text-align: center;
+    }
+    figcaption ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0 0 4rem 0;
+      font-family: var(--text);
+      font-size: var(--small);
+    }
+    .section-detail p {
+      margin: 0 2rem 2rem 2rem;
+      text-align: justify;
+      text-justify: inter-word;
+    }
+    .section-detail h4 {
+      margin: 8rem 0 2rem 0;
+    }
+    .section-detail h2 {
+      text-align: center;
+    }
+    .examples {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      margin: -4rem 0 2rem 0;
+    }
+     .container figure {
+        margin: 4rem 0 0 0;
+      }
+    @media (max-width: 762px) { /* Check this size to be sure that it works with the image*/
+      .examples {
+        display: block;
+        margin: 1rem 0 2rem 0;
+      }
+       .section-detail h4 {
+        margin: 2rem 0 1rem 0;
+      }
+      .section-detail h2 {
+        margin: 0 0 2rem 0;
+      }
+      .section-detail p {
+        margin: 0;
+      }
+      .container figure {
+        margin: 2rem 0 0 0;
+      }
+    }
+    @media (max-width: 550px) {
+      .section-detail h2 {
+        font-size: var(--h4);
+      }
+      .section-detail h4 {
+        font-size: var(--h5);
+        margin: 2rem 0 1rem 0;
+      }
+    }
+  }
+  @layer footer {
+    footer {
+      text-align: center;
+      padding: 6rem 0;
+      background: var(--bottom);
+    }
+    footer h5 {
+      color: var(--primary);
+      font-family: var(--title);
+      font-size: var(--small);
+    }
+    footer ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 2rem 0;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      gap: 4rem;
+      font-size: 3rem;
+    }
+    footer img {
+        object-fit: cover;
+        width: 20%;
+        height: 20%;        
+    }
+    footer svg {
+      width: 40px;
+      fill: var(--link);
+    }
+    footer a:hover svg {
+      fill: var(--hover);
+    }
+  }
