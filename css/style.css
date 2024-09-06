@@ -99,10 +99,14 @@
       background-color: var(--link);
     }
     .container {
-      max-width: 1200px;
+      max-width: 1600px;
       /*border: 2px solid red;*/
       margin: 0 auto;
       padding: 0 2rem;
+    }
+    video {
+      max-width: 100%;
+      height: auto;
     }
     /*------BUTTONS--------*/
     .primarybutton {
@@ -245,54 +249,106 @@
       }
     }
   }
-  @layer rightsection {
+  @layer rightsections {
+    /*POWERMIND*/
     .powermind {
       background-image: url(../img/01powermind/1main/Banner_MMW.png);
       background-color: var(--black);
-      background-repeat: no-repeat;
-      background-position: center center;
+      background-size: cover;
       box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
-      /*border: solid red;*/
-      margin: 0;
       color: var(--background);
-      padding: 10rem 0;
+      padding: 4rem 2rem 8rem 0;
       text-align: right;
     }
 
     .powermind a:last-child {
-        margin-top: 4rem;
+        margin-top: 2rem;
         border: 2px solid var(--background);
     }
     .powermind p {
-        padding: 0 0 0 14rem;
+        padding: 0 0 0 45rem;
     }
+
+    /*NEARBOOKS*/
+    .nearbooks {
+        background-image: url(../img/03nearbooks/1main/library_banner.png);
+        background-color: var(--black);
+        background-size: cover;
+        box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+        /*border: solid red;*/
+        color: var(--background);
+        padding: 4rem 2rem 8rem 0;
+        text-align: right;
+    }
+    .nearbooks a:last-child {
+      margin-top: 2rem;
+      border: 2px solid var(--background);
+    }
+    .nearbooks p {
+      padding: 0 0 0 45rem;
+    }
+
+    /*FULLDOME*/
+    .fulldome {
+      background-image: url(../img/05fulldomeinterface/1main/fulldome_cover.png);
+      background-color: var(--black);
+      background-size: cover;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+      color: var(--background);
+      padding: 4rem 2rem 8rem 0;
+      text-align: right;
+    }
+    .fulldome a:last-child {
+      margin-top: 2rem;
+      border: 2px solid var(--background);
+    }
+    .fulldome p {
+      padding: 0 0 0 45rem;
+    }
+
+
     @media (max-width: 1000px) {
         .powermind p {
             padding: 0;
         }
+        .nearbooks p {
+          padding: 0;
+        }
+        .fulldome p {
+          padding: 0;
+        }
     }
   }
   @layer leftsection {
-    .fast2 {
+    .leftsection {
+      max-width: 1600px;
       color: var(--primary);
-      margin: 0;
+      margin: 4rem 2rem 4rem 4rem;
       text-align: left;
       padding: 14rem, 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center center;
     }
-    .fast2 a:last-child {
+    .leftsection a:nth-child(3) {
         margin-top: 4rem;
         margin-bottom: 6rem;
         border: 2px solid var(--primary);
       }
-    .fast2 p {
-        padding: 0 14rem 0 0;
+    .leftsection p {
+        padding: 0 1rem 0 0;
     }
+  
     @media (max-width: 1000px) {
-        .fast2 p {
+        .leftsection p {
             padding: 0;
+        }
+        .leftsection {
+          display: block;
         }
     }
   }
+
   @layer nav {
     body {
       background-color: var(--top);
@@ -501,6 +557,7 @@
       margin: 0 0 4rem 0;
       font-family: var(--text);
       font-size: var(--small);
+      text-align: left;
     }
     .section-detail p {
       margin: 0 2rem 2rem 2rem;
@@ -517,11 +574,19 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      margin: -4rem 0 2rem 0;
+      margin: -4rem 0 -2rem 0;
+      padding: 0 0 0 10rem;
     }
      .container figure {
         margin: 4rem 0 0 0;
       }
+    .mobile-video {
+      width: 300px;
+      position: relative;
+      left: 25%;     
+    }
+
+  
     @media (max-width: 762px) { /* Check this size to be sure that it works with the image*/
       .examples {
         display: block;
@@ -550,6 +615,7 @@
       }
     }
   }
+
   @layer footer {
     footer {
       text-align: center;
