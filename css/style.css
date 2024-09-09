@@ -306,6 +306,23 @@
       padding: 0 0 0 45rem;
     }
 
+    /*EQ Solution*/
+    .eqsolution {
+      background-image: url(../img/07eqsolution/1main/eqbackground.png);
+      background-color: var(--black);
+      background-size: cover;
+      box-shadow: inset 0 0 0 1000px rgba(0,0,0,.45);
+      color: var(--background);
+      padding: 4rem 2rem 8rem 0;
+      text-align: right;
+    }
+    .eqsolution a:last-child {
+      margin-top: 2rem;
+      border: 2px solid var(--background);
+    }
+    .eqsolution p {
+      padding: 0 0 0 45rem;
+    }
 
     @media (max-width: 1000px) {
         .powermind p {
@@ -315,6 +332,9 @@
           padding: 0;
         }
         .fulldome p {
+          padding: 0;
+        }
+        .eqsolution p {
           padding: 0;
         }
     }
