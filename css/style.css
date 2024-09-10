@@ -553,7 +553,7 @@
       background-color: var(--top);
     }
     .section-detail {
-      padding: 0 0 4rem 0;
+      padding: 0 4rem 4rem 4rem;
       color: var(--primary);
     }
     .section-detail li {
