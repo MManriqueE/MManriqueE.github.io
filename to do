@@ -1,5 +1,3 @@
 Fix one images, they are aligned to the left instead of centered. (includes their captions) nearbooks and fast2 -video-
 
 Solve the responsive sizing of the containers in cover when right section (636px fixed)
-
-Quitar fondo de nearbooks
