@@ -274,7 +274,6 @@
 
 @layer cover {
   .cover {
-    /*background-image: url(../img/00main/Banner_main.jpg);*/
     background-color: var(--background);
     background-repeat: no-repeat;
     background-position: 60% 50%;
