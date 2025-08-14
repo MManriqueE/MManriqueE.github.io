@@ -476,14 +476,31 @@
 
 @layer leftsection {
   .leftsection {
-    max-width: 1600px;
+    width: 100%;
     color: var(--black);
-    margin: 2rem 2rem 1rem 4rem;
     text-align: left;
-    padding: 14rem, 0;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .leftsection .content-wrapper {
+    max-width: 1600px;
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center center;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .leftsection .container {
+    max-width: none;
+    width: auto;
+  }
+
+  .leftsection figure {
+    max-width: none;
+    width: auto;
   }
 
 
@@ -512,6 +529,10 @@
     }
 
     .leftsection {
+      padding: 7rem 2rem;
+    }
+
+    .leftsection .content-wrapper {
       display: block;
     }
   }
@@ -519,15 +540,22 @@
 
 @layer rightsection {
   .rightsection {
-    max-width: 1600px;
+    width: 100%;
     color: var(--background);
-    padding: 2rem 4rem 1rem 2rem;
     text-align: right;
-    padding: 14rem, 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center center;
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
     background-color: var(--accent);
+  }
+
+  .rightsection .content-wrapper {
+    max-width: 1600px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
   }
 
   .rightsection a:nth-child(3) {
@@ -547,6 +575,10 @@
     }
 
     .rightsection {
+      padding: 7rem 2rem;
+    }
+
+    .rightsection .content-wrapper {
       display: block;
     }
   }
