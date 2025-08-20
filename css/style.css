@@ -16,7 +16,7 @@
     --bottom: #f5f5f5;
     --top: #f5f5f5;
     --title: "Montserrat", sans-serif;
-    --heading: "Oswald", sans-serif;
+    --heading: "Montserrat", sans-serif;
     --text: "Source Sans 3", sans-serif;
     --base-size: 1.3rem;
     --scale: 1.4;
@@ -55,6 +55,7 @@
 
   h2 {
     font-size: var(--h2);
+    font-weight: 700;
   }
 
   h3 {
@@ -63,10 +64,12 @@
 
   h4 {
     font-size: var(--h4);
+    font-weight: 500;
   }
 
   h5 {
     font-size: var(--h5);
+    font-weight: 400;
   }
 
   h6 {
@@ -543,7 +546,7 @@
     width: 100%;
     color: var(--background);
     text-align: right;
-    padding: 4rem 2rem;
+    padding: 4rem 5rem;
     display: flex;
     justify-content: center;
     background-color: var(--accent);
@@ -805,40 +808,8 @@
       content: "\2630";
     }
 
-    .powermind h2 {
+    .rightsection h2 {
       font-size: var(--h3);
-    }
-
-    .powermind .container {
-      padding: 0 1rem 2rem 0;
-      border-radius: 6rem 0 0 6rem;
-    }
-
-    .nearbooks h2 {
-      font-size: var(--h3);
-    }
-
-    .nearbooks .container {
-      padding: 0 1rem 2rem 1rem;
-      border-radius: 6rem 0 0 6rem;
-    }
-
-    .fulldome h2 {
-      font-size: var(--h3);
-    }
-
-    .fulldome .container {
-      border-radius: 12rem 0 0 12rem;
-      padding: 0rem 2rem 1rem 1rem;
-    }
-
-    .eqsolution h2 {
-      font-size: var(--h3);
-    }
-
-    .eqsolution .container {
-      border-radius: 6rem 0 0 6rem;
-      padding: 0rem 1rem 1rem 1rem;
     }
 
     .leftsection h2 {
@@ -993,13 +964,70 @@
     max-width: 820px;
   }
 
+  .section-detail .squares-section {
+    background-image: url(../img/00main/gridBG.png);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 0;
+    border-radius: 0.5rem;
+    margin: 8rem 0;
+  }
+
+  /* Hanging indent: indent lines after the first */
+  .section-detail .hanging-indent {
+    padding-left: 1.5rem;
+    text-indent: -1.5rem;
+  }
+
   .section-detail h4 {
     margin: auto;
     margin-bottom: 1rem;
     margin-top: 3rem;
     width: 100%;
     max-width: 820px;
-    color: var(--accent);
+    color: var(--black);
+  }
+
+
+  .section-detail .heading-with-icon {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 820px;
+    margin: 4rem auto 2rem auto;
+  }
+
+  .section-detail .heading-with-icon .bulleticon {
+    flex: 0 0 auto;
+    height: 1.5em;
+    width: auto;
+    margin: 0;
+  }
+
+  .section-detail .heading-with-icon h4 {
+    margin: 0;
+  }
+
+  .section-detail .reflections {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 820px;
+    margin: 4rem auto 2rem auto;
+  }
+
+  .section-detail .reflections .numbericon {
+    flex: 0 0 auto;
+    height: 1.5em;
+    width: auto;
+    margin: 0;
+  }
+
+  .section-detail .reflections p {
+    margin: 0;
   }
 
   .section-detail h5 {
@@ -1012,8 +1040,32 @@
   }
 
   .section-detail h2 {
+    color: var(--black);
+    max-width: 820px;
     text-align: center;
-    color: var(--accent);
+    margin: auto;
+    margin-top: 8rem;
+  }
+
+  /* Title icon layered above/left of the h2 */
+  .section-detail .titlewrap {
+    position: relative;
+    width: 100%;
+    max-width: 820px;
+    margin: 0 auto 10rem auto;
+  }
+
+  .section-detail .titlewrap h2 {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-detail .titleicon {
+    position: absolute;
+    width: 250px;
+    left: -80px;
+    top: 50px;
+    z-index: 2;
   }
 
   .section-detail .quote {
@@ -1024,6 +1076,7 @@
     text-align: center;
     color: var(--primary);
     text-transform: none;
+    font-weight: 400;
   }
 
   .section-detail .author {
@@ -1068,6 +1121,26 @@
     margin-top: -1rem;
   }
 
+  .closeup {
+    display: grid;
+    max-width: 820px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5rem;
+    margin: auto;
+  }
+
+  .closeup figure img {
+    display: grid;
+    width: 386px;
+    height: auto;
+    margin: auto;
+  }
+
+  /* Reduce space between closeup image and its heading */
+  .closeup h5 {
+    margin-top: 1rem;
+  }
+
   .section-detail .oneimgwide {
     max-width: 820px;
     height: auto;
@@ -1084,8 +1157,7 @@
   }
 
   .bulleticon {
-    width: 30px;
-    fill: var(--primary);
+    height: 42px;
     display: inline-block;
     position: relative;
     margin-right: 1rem;
@@ -1192,6 +1264,13 @@
     }
   }
 
+  @media (max-width: 920px) {
+    .section-detail .titleicon {
+      opacity: 0;
+      width: 0;
+    }
+  }
+
   @media (max-width: 880px) {
     .column {
       flex: 50%;
@@ -1231,6 +1310,13 @@
   @media (max-width: 762px) {
 
     /* Check this size to be sure that it works with the image*/
+    .section-detail {
+      padding: 0 1.5rem 1rem 1.5rem;
+    }
+    .section-detail .titlewrap {
+      margin: 0 auto 1rem auto;
+    }
+
     .examples {
       display: block;
       margin: 1rem 0 2rem 0;
@@ -1242,16 +1328,31 @@
       margin: 1rem 0 2rem 0;
     }
 
+    .closeup {
+      display: block;
+    }
+
     .section-detail h4 {
       margin: 2rem 0 1rem 0;
     }
 
     .section-detail h2 {
-      margin: 0 0 2rem 0;
+      margin: 2rem 0 2rem 0;
     }
 
     .container figure {
       margin: 2rem 0 0 0;
+    }
+
+    .section-detail .reflections {
+      align-items: baseline;
+      gap: 0.75rem;
+    }
+
+    .section-detail .quote {
+      font-size: var(--h5);
+      font-weight: 400;
+      margin-top: 2rem;
     }
   }
 
@@ -1266,6 +1367,10 @@
     }
 
     .team figure img {
+      padding: 0;
+    }
+
+    .closeup figure img {
       padding: 0;
     }
   }
