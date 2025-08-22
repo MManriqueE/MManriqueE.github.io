@@ -1098,6 +1098,14 @@
     z-index: 2;
   }
 
+  .section-detail .powermindicon {
+    position: absolute;
+    width: 180px;
+    left: -140px;
+    top: 40px;
+    z-index: 2;
+  }
+
   .section-detail .quote {
     max-width: 820px;
     margin: auto;
@@ -1312,6 +1320,17 @@
       opacity: 0;
       width: 0;
     }
+    .section-detail .azetsicon {
+      opacity: 0;
+      width: 0;
+    }
+
+    .section-detail .powermindicon {
+      opacity: 0;
+      width: 0;
+    }
+
+    
   }
 
   @media (max-width: 880px) {
