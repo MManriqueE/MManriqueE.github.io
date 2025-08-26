@@ -1106,6 +1106,14 @@
     z-index: 2;
   }
 
+  .section-detail .livsicon {
+    position: absolute;
+    width: 296px;
+    left: -100px;
+    top: -60px;
+    z-index: 2;
+  }
+
   .section-detail .quote {
     max-width: 820px;
     margin: auto;
@@ -1326,6 +1334,11 @@
     }
 
     .section-detail .powermindicon {
+      opacity: 0;
+      width: 0;
+    }
+
+    .section-detail .livsicon {
       opacity: 0;
       width: 0;
     }
