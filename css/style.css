@@ -15,6 +15,7 @@
     --gray: #3b3b3b;
     --bottom: #f5f5f5;
     --top: #f5f5f5;
+    --name: "Sansation", sans-serif;
     --title: "Montserrat", sans-serif;
     --heading: "Montserrat", sans-serif;
     --text: "Source Sans 3", sans-serif;
@@ -48,7 +49,7 @@
   }
 
   h1 {
-    font-family: var(--title);
+    font-family: var(--name);
     text-transform: uppercase;
     font-size: var(--h1);
   }
@@ -703,7 +704,7 @@
 
 @layer nav {
   body {
-    background-color: var(--top);
+    background-color: var(--background);
   }
 
   header {
@@ -760,7 +761,7 @@
 
   nav {
     font-family: var(--text);
-    font-weight: 700;
+    font-weight: 400;
     margin: 0;
     padding: 0;
   }
@@ -932,6 +933,57 @@
       align-items: center;
     }
   }
+
+  /* Random scribble underline for header nav links */
+  header a:hover {
+    text-decoration: none;
+  }
+
+  header a.scribble-link .scribble-target,
+  nav .menu a.scribble-link .scribble-target {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 4px;
+  }
+
+  header a.scribble-link .scribble-target .scribble-underline,
+  nav .menu a.scribble-link .scribble-target .scribble-underline {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 16px;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  header a.scribble-link .scribble-target .scribble-underline path,
+  nav .menu a.scribble-link .scribble-target .scribble-underline path {
+    stroke: currentColor;
+    stroke-width: 3;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke-dashoffset 0.5s ease, opacity 0.2s ease;
+  }
+
+  header a.scribble-link:hover .scribble-target .scribble-underline,
+  nav .menu a.scribble-link:hover .scribble-target .scribble-underline {
+    opacity: 1;
+  }
+
+  header a.scribble-link:hover .scribble-target .scribble-underline path,
+  nav .menu a.scribble-link:hover .scribble-target .scribble-underline path {
+    stroke-dashoffset: 0;
+    stroke: var(--hover);
+  }
+
+  /* keep link text color on hover */
+  header a.scribble-link:hover,
+  nav .menu a.scribble-link:hover {
+    color: var(--black);
+  }
 }
 
 @layer detail {
@@ -939,9 +991,7 @@
     background-color: var(--background);
   }
 
-  header {
-    background-color: var(--top);
-  }
+
 
   .section-detail {
     padding: 0 4rem 4rem 4rem;
