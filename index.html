@@ -113,119 +113,141 @@
       
       <section class="cover">
         <div class="container">
-          <h2>Hi! I'm Mariana <br> I am <span id="typewriter" class="typewriter"></span>
-            <span id="cursor" class="cursor">|</span> </h2>
+          <div class="titlewrap">
+            <img class="titleleftdecal" src="img/00main/decoration/decalLeftDown.png">
+            <img class="titlerightdecal" src="img/00main/decoration/decalRightTop.png">        
+          <h1>Mariana Manrique</h1>
+            <h4><span id="typewriter" class="typewriter">|</span>
+            <span id="cursor" class="cursor">|</span> </h4>
           <script>
             function sleep(ms) {
               return new Promise ((resolve) => setTimeout(resolve, ms));
             }
-            const phrases = ['a UX Designer','a Leader','a UI Designer','up for adventure']
-            const el = document.getElementById(typewriter);
+            const phrase = 'Gothenburg-based UX & UI Designer';
+            const typewriter = document.getElementById('typewriter');
+            const cursor = document.getElementById('cursor');
+            let sleepTime = 120;
 
-            let sleepTime = 100;
-
-            let CurPhraseIndex = 0;
-
-            const writeLoop = async () => {
-              while (true) {
-                let curWord = phrases[CurPhraseIndex];
-
-                for(let i = 0; i < curWord.length; i++) {
-                  typewriter.innerText = curWord.substring(0, i + 1);
-                  await sleep(sleepTime);
-                }
-
-                await sleep(sleepTime * 10);
-
-                for(let i = curWord.length; i > 0; i--) {
-                  typewriter.innerText = curWord.substring(0, i - 1);
-                  await sleep(sleepTime);
-                }
-
-                await sleep(sleepTime * 5);
-
-                if (CurPhraseIndex === phrases.length - 1) {
-                  CurPhraseIndex = 0;
-                } else {
-                  CurPhraseIndex++;
-                }
-
-            }
-            }
-
-            writeLoop();
-          </script>  
-
-        
-
-          <p><a href="about.html" class="primarybutton"> Learn about me </a></p>
+            (async function typeOnce() {
+              if (!typewriter) return;
+              typewriter.textContent = '';
+              for (let i = 0; i < phrase.length; i++) {
+                typewriter.textContent = phrase.substring(0, i + 1);
+                await sleep(sleepTime);
+              }
+              if (cursor) {
+                cursor.style.visibility = 'hidden';
+              }
+            })();
+          </script> 
+          </div> 
         </div>
       </section>
 
-      <section class="rightsection">
-        <div class="content-wrapper">
-          <figure>
-            <img style="object-fit:contain;" src="img/02fast2/1main/mobile.png" alt="image with mobile view examples.">
-          </figure>
-          <div class="container">
-            <h2> Fast2 </h2>
-            <p> Translation of an old software to a web app. The aim is to completely replace the current mobile apps and native desktop software for a web app. </p>
-            <a href="fast2.html" class="secondaryaltbutton"> Learn more </a>
+
+
+
+      <div class="purple-section">
+
+          <img class="logooutline" src="img/00main/decoration/outlinelogo.png" alt="Logo for Mariana">
+          <h3> Designing with purpose, delivering with empathy </h3>
+        <h5>I aim to solve the right problems with clarity and empathy, ensuring the end result not only works well, but feels right for the people using <br><br> </h5>
+       
+        <div class="case">
+          <div class="firstcolumn">
+            <a href="fast2.html"> <img src="img/00main/cases/01fast2default.png" alt="Go to Fast2 design case study. Web application, UX & UI, complex systems." style="--f:.04;">
+            </a>
+            <a href="powermind.html"> <img src="img/00main/cases/03powerminddefault.png" alt="Go to Powermind design case study. Web application, UX & UI, new features." style="--f:.04;">
+            </a>
           </div>
+          <div class="secondcolumn">
+            <a href="azets.html"> <img src="img/00main/cases/02azetsdefault.png" alt="Go to Azets design case study. Website, UX & UI, Optimizely." style="--f:.04;">
+            </a>
+            <a href="livsmedelsverket.html"> <img src="img/00main/cases/04livsdefault.png" alt="Go to Livsmedelsverket design case study. Website, UX & UI, accessibility." style="--f:.04;">
+            </a>  
+            </div>   
         </div>
-      </section>
 
-      <section class="leftsection">
-        <div class="content-wrapper">
-          <div class="container">
-            <h2> One Azets</h2>
-            <p> Re-designed finance services website to unify patterns and assets globally. Giving a fresh look while considering accessibility. </p>
-            <a href="azets.html" class="secondarybutton"> Learn more </a>
-          </div>
-          <figure>
-            <img style="object-fit:contain;" src="img/azets/1main/azets1.png" alt="image of the dashboard of the website.">
-          </figure>
-        </div>
-      </section>
+      </div>
+
       
-      <section class="rightsection">
+      <div class="whitesection">
+        <h3>I build UX that scales with the system — and the users.</h3>
         <div class="content-wrapper">
+          <img class="videoleftdecal" src="img/00main/decoration/decalLeftTop.png">
           <figure>
-            <img style="object-fit: contain;" src="img/01powermind/2detail/powermind product.png" alt="The image shows three different phone screens, to the left it's a purple profile page, in the middle a purple search page with tiles arranged in a grid that contain a picture and the title of a meditation category. To the right a purple page with a list of the tracks available for a specific category.">
-          </figure>
-          <div class="container">
-            <h2>Powermind</h2>
-            <p> App that aids users improve different areas of their lives, like sleep, career, social skills, among others through self-hypnosis. </p>
-            <a href="powermind.html" class="secondaryaltbutton"> Learn more </a>
-          </div>
-        </div>
-      </section>
-      
-
-
-      <section class="leftsection">
-        <div class="content-wrapper">
-          <div class="container">
-            <h2> Livsmedels&shy;verket </h2>
-            <p> Updated the design of the website, the look and feel and made sure that it complied with the Web Content Accessibility Guidelines. </p>
-            <a href="livsmedelsverket.html" class="secondarybutton"> Learn more </a>
-          </div>
-          <figure>
-            <img style="object-fit:contain;" src="img/11livsmedelsverket/1main/home.png" alt="image of the dashboard of the website.">
+            <video class="startvideo" controls autoplay loop>
+              <source src="img/00main/startpagevideo.mp4" type="video/mp4"
+                alt="Looped video of me explaining the fast2 dashboard and tickets.">
+              Your browser does not support the video tag.
+            </video>
+            <figcaption>
+              <ul>
+                <li> </li>
+              </ul>
+            </figcaption>
           </figure>
         </div>
-      </section>
+        <h5>I thrive in <b>complex systems</b>, designing user flows and interfaces that align with technical architecture while staying grounded in <b>real user needs</b>. By aligning UX with complex systems and real-world needs, I create <b>scalable, intuitive solutions</b> built for long-term impact.</h5>
+      </div>
 
-      <!--<section class="rightsection">
-        <figure>
-          <img style="object-fit:contain;" src="img/05fulldomeinterface/1main/portada.png" alt="image of the dashboard of the website.">
-        </figure>
-        <div class="container">
-          <h3> Fulldome interface </h3>
-          <p> A hand-gesture tracking interface designed to manipulate 3D content in a fulldome. </p>
-          <a href="fulldome.html" class="secondaryaltbutton"> Learn more </a>
+
+      <div class="purple-section">
+        <h3>Design leader & team player <br><br> </h3>
+
+        <div class="references">
+
+        <div class="reference1">
+          <div class="referencepicture">
+            <img class="decalsmall" src="img/00main/decoration/decalSmall1.png" alt="white ornate corner.">
+          <figure>
+            <img class="profilepicture" src="img/00main/photos/helen.png" alt="Photo of Helen, a colleague at Twoday with the Azets project.">
+          </figure>
+          <figcaption>
+            <ul>
+              <li>Helen Hopkinson (LinkedIn) <br>Project leader @Azets for <i>Twoday</i> </li>
+            </ul>
+          </figcaption>
         </div>
-      </section>-->
+        <h5>I work in close collaboration with Project leaders and managers <b style="color: var(--background);">to evolve and grow the design process</b>, improve the design thinking, and raise the quality bar.</h5>
+        </div>
+
+
+        <div class="reference1">
+          <h5>Mentored Junior Designers, provided feedback, and tried to find ways to improve their work and <b style="color: var(--background);">help them learn and improve</b> as designers.</h5>
+          <div class="referencepicture">
+            <img class="decalsmall2" src="img/00main/decoration/decalSmall2.png" alt="white ornate corner.">
+          <figure>
+            <img class="profilepicture" src="img/00main/photos/victor.png" alt="Photo of Victor, a colleague at SWG with the Fast2 project.">
+          </figure>
+          <figcaption>
+            <ul>
+              <li>Victor Rådefjäll (LinkedIn) <br>Frontend & UX/UI @SWG</li>
+            </ul>
+          </figcaption>
+        </div>
+        </div>
+
+
+        <div class="reference1">
+          <div class="referencepicture">
+            <img class="decalsmall" src="img/00main/decoration/decalSmall1.png" alt="white ornate corner.">
+          <figure>
+            <img class="profilepicture" src="img/00main/photos/team.png" alt="Photo of me and the dev team at SWG.">
+          </figure>
+          <figcaption>
+            <ul>
+              <li>With the developer team @SWG's Christmas party.</li>
+            </ul>
+          </figcaption>
+        </div>
+        <h5>I<b style="color: var(--background);"> align and negotiate the design goals</b> with different area teams like management, development, marketing, and branding.</h5>
+        </div>
+        </div>
+        <a href="about.html" class="secondaryaltbutton"> Learn about me </a>
+
+      </div>
+
 
 
 
