@@ -527,6 +527,15 @@
     font-weight: 100;
   }
 
+  .purple-section .references a {
+    color: var(--background);
+  }
+
+  .purple-section .references a:hover {
+    color: var(--background);
+    font-weight: 400;
+  }
+
   .purple-section .reference1 .referencepicture {
     position: relative;
     margin: auto;
