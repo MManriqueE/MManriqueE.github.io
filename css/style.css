@@ -1124,9 +1124,10 @@
       width: 100vw;
       height: 100vh;
       opacity: 0;
-      background: var(--primary);
+      background: var(--accent);
       padding-top: 20%;
       transition: right 0s 0.5s, opacity 0.5s;
+      z-index: 9999;
     }
 
     button:focus+nav,
@@ -1165,6 +1166,10 @@
       fill: var(--hover);
     }
 
+    .smallicon {
+      fill: var(--background);
+    }
+
     nav .primarybutton {
       background-color: var(--background);
       color: var(--primary);
@@ -1177,14 +1182,15 @@
     }
 
     nav ul::after {
-      content: "\2716";
+      content: "\2715";
       color: var(--background);
       display: block;
-      position: absolute;
-      top: 0.125rem;
-      right: 0.5rem;
+      position: fixed;
+      top: 5rem;
+      right: 2rem;
       font-size: 3rem;
       line-height: 1;
+
     }
   }
 
@@ -1769,6 +1775,7 @@
       font-size: var(--h5);
       font-weight: 400;
       margin-top: 2rem;
+      font-family: var(--text);
     }
   }
 
