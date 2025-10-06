@@ -301,7 +301,7 @@
         <div class="squares-section">
         <div class="heading-with-icon">
           <img class="bulleticon" src="img/00main/icons/closer look.png" alt="Icon of a magnifying glass with an eye in the middle.">
-          <h4> Closer look at product </h4>
+          <h4> Closer look at the product </h4>
         </div>
         <figure class="oneimgwide">
           <img src="img/azets/2detail/hero.png"
@@ -398,6 +398,28 @@
       });
     });
   </script>
+
+
+<a href="javascript:" id="return-to-top"><img class="return-to-top" src="img/00main/icons/up-arrow.png"/></a>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script>
+  // ===== Scroll to Top ==== 
+$(window).scroll(function() {
+  if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+      $('#return-to-top').fadeIn(200);    // Fade in the arrow
+  } else {
+      $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+  }
+});
+$('#return-to-top').click(function() {      // When arrow is clicked
+  $('body,html').animate({
+      scrollTop : 0                       // Scroll to top of body
+  }, 500);
+});
+  </script>
+
+
   </body>
   
   </html>

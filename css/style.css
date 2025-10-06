@@ -31,6 +31,8 @@
     --small: calc(var(--base-size) / var(--scale));
   }
 
+
+
   body {
     background-color: var(--background);
     font-family: var(--text);
@@ -39,6 +41,40 @@
     padding: 0;
     line-height: 1.5;
   }
+
+
+  #return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    display: block;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top:hover {
+  opacity: 60%;
+}
+
+
+  .return-to-top img {
+  margin: 0;
+  position: relative;
+  left: 16px;
+  top: 13px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 
   /*--------FONTS-------*/
   h2,
@@ -1463,7 +1499,7 @@
     margin-top: 4rem;
     font-size: var(--h4);
     text-align: center;
-    color: var(--primary);
+    color: var(--accent);
     text-transform: none;
     font-weight: 400;
   }
